@@ -20,7 +20,9 @@ class App extends React.Component {
   componentDidMount(){
     var that = this
     $.get('/api/Product', (data)=>{
-      console.log(data)
+      this.setState({
+        products: data
+      })
     })
   }
   

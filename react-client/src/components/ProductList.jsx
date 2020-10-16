@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ProductItem from './ProductItem'
+import ProductItem from './ProductItem.jsx'
 
 export default class ProductList extends Component {
     constructor(props){
