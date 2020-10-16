@@ -53,7 +53,7 @@ class App extends React.Component {
   const Wellcome = (props) => (
     <div className="App">
 
-         <h1>Welcome to shoping experience</h1>
+         <h1><br></br>Wellcome to shopping experience</h1>
          <br></br>
          <br></br>
          <p>A new online shoping experience.Get everything you love to your house .Our shop offers you some interesting products, come, discover and buy good products.</p>
@@ -62,6 +62,7 @@ class App extends React.Component {
          <br></br><br></br>
          <br></br>
           <h4>By Issam && Mohamed Amine/RBK</h4>
+         <p>To contact us, please send us an email to: shopping.experience.issam.med@gmail.com</p><br></br>
          
     </div>
   );
