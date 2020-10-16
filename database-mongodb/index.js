@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const mongoUri = 'mongodb://localhost/blogmodo';
+  const mongoose = require('mongoose');
+const mongoUri = 'mongodb://localhost/shopingexperience';
 
-const db = mongoose.connect(mongoUri);
 
+const db = mongoose.connect(mongoUri)
 module.exports = db;

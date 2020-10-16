@@ -1,25 +1,24 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-
-const Blogs = require('../database-mongodb/Blog.js');
-
+const path = require('path')
+const Products = require('../database/Product.js');
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-// UNCOMMENT FOR REACT
- app.use(express.static(__dirname + '/../react-client/dist'));
+const UI_PATH = path.join(__dirname, '..', 'shopping', 'dist')
+app.use(express.static(UI_PATH));
 
-// UNCOMMENT FOR ANGULAR
-// app.use(express.static(__dirname + '/../angular-client'));
-// app.use(express.static(__dirname + '/../node_modules'));
 
-app.get('/api/blogs', function(req, res) {
-  // TODO - your code here!
-});
+app.get('/api/Product',function(req,res){
+  console.log('get request on /api/Product')
+  Products.find().then(product=>res.send(product));
+})
 
-app.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
+
+ app.listen(PORT, () => {
+    console.log(`listening on port ${PORT}`);
+  }); 
+
