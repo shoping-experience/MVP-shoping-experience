@@ -10,10 +10,10 @@ export default class ProductList extends Component {
         return (
              <div>
                  <button onClick={this.props.onClick} name="addproduct" >Buy products</button>
-                 {this.props.products.map(product=><ProductItem product={product}></ProductItem>)}
-        <br>{console.log('here',this.props.products)}</br>
+                     {this.props.products.map(product=> <ProductItem product={product}></ProductItem>)}
+                  {/* <br>{console.log('here',this.props.products)}</br> */}
                  <button onClick={this.props.onClick} name="addproduct" >Buy products</button>
-        </div>
+             </div>
         )
     }
 }

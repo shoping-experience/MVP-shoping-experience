@@ -3,21 +3,21 @@ import AddProduct from './components/AddProduct.jsx';
 import Compo from './components/Compo.jsx'
 import Login from './components/Login.jsx'
 import SignIn from './components/SignIn.jsx'
+import ProductList from './components/ProductList.jsx'
 //import axios from "axios"
 import $ from 'jquery';
-
-import ProductList from './components/ProductList.jsx';
 
 
 class App extends React.Component {
   constructor(props) {
       super(props);
       this.state = {view: "Wellcome",products:[]};
-      this.handleOnClick = this.handleOnClick.bind(this);
+     this.handleOnClick = this.handleOnClick.bind(this);
 
   }
   handleOnClick (e){
     this.setState({view: e});
+    console.log(this.state.view);
   }
 
   componentDidMount(){
@@ -27,35 +27,43 @@ class App extends React.Component {
         products: data
       })
     })
+
   }
   
   render(){
     console.log(this.state.products)
-    const view = this.state.view;
+    const {view} = this.state;
         let changeForm;
-        if(this.state.view==="Wellcome"){
-            return <Wellcome onClick={()=>{this.handleOnClick('SignIn')}} />
+        if(view==="Wellcome"){
+            changeForm= <Wellcome onClick={()=>{this.handleOnClick('SignIn')}} />
         }
-        else if(view==="SignIn"){
-          return < SignIn onClickChange={(e)=>{this.handleOnClick(e)}} />
+        else if(view === "SignIn"){
+          changeForm =<SignIn onClickChange={()=>{this.handleOnClick('products')}} />
+          // changeForm =< ProductList products={this.state.products} onClick={()=>this.handleOnClick('addproduct')} />
+
         }
-        else if(view==="Login"){
-          return< Login onClick={this.handleOnClick} />
-      } else if(view==="Compo"){
-        changeForm=< Compo onClick={this.handleOnClick} />
-    }
+      //   else if(view==="Login"){
+      //     changeForm= < Login onClick={this.handleOnClick} />
+        
+      // } 
+    //   else if(view==="Compo"){
+    //     changeForm=< Compo onClick={this.handleOnClick} />
+    // }
         else if(view==="products"){
-          changeForm=< ProductList products={this.state.products} onClick={this.handleOnClick} />
+          changeForm=<ProductList products={this.state.products} onClick={()=>this.handleOnClick('addproduct')} />
       }
       else if(view==="addproduct"){
-        changeForm=< AddProduct onClick={this.handleOnClick} />
-    }
+        changeForm=<AddProduct  onClick={()=>this.handleOnClick('compo')} />
+    }else if(view==="compo"){
+          changeForm=<Compo   onClick={this.handleOnClick} />
+       }
+
         return(
           <div>        
           {changeForm}      
           </div>
   )
-      }    
+ }    
   }
 
 
