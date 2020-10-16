@@ -17,6 +17,7 @@ class SignIn extends React.Component {
   }
   addUser(e){
     e.preventDefault()
+    this.props.onClickChange('Login')
     const newUser = {
       email:this.state.email,
       name: this.state.name,
@@ -38,7 +39,7 @@ class SignIn extends React.Component {
    if(this.state.check === ""){
     return (
       <div className=" SignInForm ">
-        <form onSubmit={(e)=>this.addUser(e)}>
+        <form onSubmit={this.addUser}>
           <input
             type="text"
             name="user"
@@ -72,14 +73,14 @@ class SignIn extends React.Component {
           /><br></br>
 
              {/* <input type="submit" name="Next" /><br></br>   */}
-           <button type="submit" onClick={this.props.onClickChange('Login')} name="Login" >SignIn </button>
+           <button type="submit"  name="Login" >SignIn </button>
         </form>
       </div>
     );
    }else {
      return (
        <div>
-         {/* <button onClick={props.onClick} name="Wellcome" >Enter </button> */}
+         <button onClick={props.onClick} name="Wellcome" >Enter </button>
        </div>
      )
    }
