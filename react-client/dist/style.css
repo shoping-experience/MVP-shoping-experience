@@ -38,5 +38,39 @@ img{
   display: block;
   margin-left: auto;
 margin-right: auto;
-width: 30%;
+width: 50%;
+}
+.butt1,.butt2,.butt3{
+  position:absolute;
+transition: .13s ease;
+    left: 300px;
+    top: 500px;
+    cursor: pointer;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
 }

@@ -9,9 +9,10 @@ export default class ProductList extends Component {
     render() {
         return (
              <div>
+                 <button onClick={this.props.onClick} name="addproduct" >Buy products</button>
                  {this.props.products.map(product=><ProductItem product={product}></ProductItem>)}
         <br>{console.log('here',this.props.products)}</br>
-                 <button onClick={this.props.onClick} name="addproduct" align="left">add new product</button>
+                 <button onClick={this.props.onClick} name="addproduct" >Buy products</button>
         </div>
         )
     }

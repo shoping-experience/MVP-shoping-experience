@@ -26,11 +26,24 @@ export default class AddProduct extends Component {
         const {name,size,price} = this.state
         return (
             <div>
-                <input type="text" placeholder="name of outfit" name='name' onChange={this.saveProduct}/>
-                <input type="text" placeholder="size" name="size" onChange={this.saveProduct}/>
-                <input type="text" placeholder="suggested price" name="price" onChange={this.saveProduct}/>
-                 <button onClick={this.sendNewProduct} >add new product</button>
-                
+                <div>
+                <input type="text" placeholder="name of outfit" name='name' onChange={this.saveProduct}/><br></br>
+                <input type="text" placeholder="size" name="size" onChange={this.saveProduct}/><br></br>
+                <input type="text" placeholder="suggested price" name="price" onChange={this.saveProduct}/><br></br>
+                 <button class="butt1" onClick={this.sendNewProduct} >Add to your purchase</button>
+                </div>
+                <div>
+                <input type="text" placeholder="name of outfit" name='name' onChange={this.saveProduct}/><br></br>
+                <input type="text" placeholder="size" name="size" onChange={this.saveProduct}/><br></br>
+                <input type="text" placeholder="suggested price" name="price" onChange={this.saveProduct}/><br></br>
+                 <button class="butt2"  onClick={this.sendNewProduct} >Add to your purchase</button>
+                </div>
+                <div>
+                <input type="text" placeholder="name of outfit" name='name' onChange={this.saveProduct}/><br></br>
+                <input type="text" placeholder="size" name="size" onChange={this.saveProduct}/><br></br>
+                <input type="text" placeholder="suggested price" name="price" onChange={this.saveProduct}/><br></br>
+                 <button class="butt3"  onClick={this.sendNewProduct} >Add to your purchase</button>
+                </div>
             </div>
         )
     }
